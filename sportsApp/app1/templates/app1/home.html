@@ -10,7 +10,7 @@
     <p>Welcome, {{ user.username }}!</p>
     <p><a href="{% url 'logout' %}">Logout</a></p>
   {% else %}
-    <p><a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Create an Account</a></p>
+    <p>Welcome</p>
   {% endif %}
 
 
