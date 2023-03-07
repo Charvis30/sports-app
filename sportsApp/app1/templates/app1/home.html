@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<title>Home Page</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+
+  {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}!</p>
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+  {% else %}
+    <p><a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Create an Account</a></p>
+  {% endif %}
+
+
+
+
+
+
+{% endblock content %}
