@@ -8,10 +8,33 @@
 
   {% if user.is_authenticated %}
     <p>Welcome, {{ user.username }}!</p>
-    <p><a href="{% url 'logout' %}">Logout</a></p>
   {% else %}
-    <p>Welcome</p>
+    <h1>Welcome</h1>
   {% endif %}
+
+  <div class="slideshow">
+		<img src="{% static 'images/curry.jpg' %}">
+		<img src="{% static 'images/jesss.jpg' %}">
+		<img src="{% static 'images/messi.jpg' %}">
+    <img src="{% static 'images/mahomes.jpg' %}">
+	</div>
+
+<script>
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("slideshow")[0].getElementsByTagName("img");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.opacity = "0";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.opacity = "1";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+  }
+</script>
 
 
 

@@ -1,3 +1,33 @@
+/* Slide show*/
+.slideshow {
+    position: relative;
+    height: 600px;
+    width: 1000px;
+    margin: auto;
+}
+
+.slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 600px;
+    width: 1000px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow img:first-child {
+    opacity: 1;
+}
+ /* main */
+
+h1{
+    font-family: sans-serif, Tahoma;
+    font-weight: lighter;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 body
 {
     margin: 0;
@@ -165,7 +195,3 @@ form a{
     padding: 3px
 }
 
-
-
-
-  
