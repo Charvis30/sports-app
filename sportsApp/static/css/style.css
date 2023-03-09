@@ -98,8 +98,7 @@ a{
     background-color: inherit;
     font-family: sans-serif, Tahoma;
     font-weight: lighter; 
-    margin-left: 0; /* Important for vertical align on mobile phones */
-    margin-right: 0;
+    margin: 0;
 }
 
 /* Dropdown content (hidden by default) */
@@ -109,13 +108,18 @@ a{
     background-color: rgb(255, 91, 42);
     z-index: 1;
     float: left;
-    text-align: center;
-    width: 100px;
+    
+    min-width: 100px;
 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
+    width: 100px;
     display: block;
+}
+.dropdown-content a{
+    width: 68px;
+    text-align: left;
 }
 .dropdown-content a:hover {
     background-color: white;
