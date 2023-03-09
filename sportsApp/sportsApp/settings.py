@@ -36,6 +36,7 @@ INSTALLED_APPS = [
 
     #my apps
     "app1",
+    "news",
 
     #django apps
     "useraccounts",

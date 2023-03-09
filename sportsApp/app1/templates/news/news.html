@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<title>What You Missed</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+
+
+<h2>Example(Filler)</h2>
+<table class="scores">
+    <tr>
+      <th>Home</th>
+      <th>Away</th>
+      <th>Score</th>
+    </tr>
+    <tr>
+      <td>Memphis Grizz</td>
+      <td>Los Angeles Lakers</td>
+      <td>105 - 109</td>
+    </tr>
+    <tr>
+      <td>Miami Heat</td>
+      <td>Phoenix Suns</td>
+      <td>100 - 89</td>
+    </tr>
+  </table>
+
+
+
+{% endblock content %}

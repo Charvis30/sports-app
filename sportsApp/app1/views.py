@@ -11,6 +11,11 @@ def home_view(request):
     context = {} 
     return render(request, "app1/home.html", context)
 
+def news_view(request):
+    context = {} 
+    return render(request, "news/news.html", context)
+
+
 
 def register_view(request):
     form = UserCreationForm()
