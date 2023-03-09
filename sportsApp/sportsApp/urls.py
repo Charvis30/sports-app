@@ -20,6 +20,7 @@ from app1.views import (
     register_view,
     login_view,
     news_view,
+    trending_view,
 )
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 
@@ -28,6 +29,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', home_view, name="home"),
     path('news/', news_view, name="news"),
+    path('trending/', trending_view, name="trending"),
     path("login/", login_view, name="login"),
     path("register/", register_view, name="register"),
     path('reset_password/', PasswordResetView.as_view(), name='reset_password'),
