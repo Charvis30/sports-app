@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
 
     #my apps
-    "app1",
+    "app1","scores","sportsApp",
 
     #django apps
     "useraccounts",
@@ -131,7 +131,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static/"),
+    os.path.join(BASE_DIR, "static"),
 )
 
 # Default primary key field type

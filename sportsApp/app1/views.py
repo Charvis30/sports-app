@@ -8,15 +8,15 @@ from django.contrib.auth import login
 # Create your views here.
 
 def home_view(request):
-    context = {} 
+    context = {'title': 'Home Page'}
     return render(request, "app1/home.html", context)
 
 def news_view(request):
-    context = {} 
+    context = {'title': 'News'}
     return render(request, "news/news.html", context)
 
 def trending_view(request):
-    context = {} 
+    context = {'title': 'Trending'}
     return render(request, "news/trending.html", context)
 
 
