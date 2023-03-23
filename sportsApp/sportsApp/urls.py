@@ -22,6 +22,10 @@ from app1.views import (
     news_view,
     trending_view,
 )
+from basketball.views import(
+    basketball_data,
+
+)
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 
 
@@ -38,4 +42,5 @@ urlpatterns = [
     path('reset_password_complete/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('useraccounts/', include('django.contrib.auth.urls'), {'template_name': 'registration/login.html'}),
     path('scores/', include('scores.urls')),
+    path('basketball/', basketball_data),
 ]
