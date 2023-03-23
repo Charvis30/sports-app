@@ -42,5 +42,5 @@ urlpatterns = [
     path('reset_password_complete/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('useraccounts/', include('django.contrib.auth.urls'), {'template_name': 'registration/login.html'}),
     path('scores/', include('scores.urls')),
-    path('basketball/', basketball_data),
+    path('basketball/', basketball_data, name="basketball"),
 ]
