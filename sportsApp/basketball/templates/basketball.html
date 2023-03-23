@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<title>Basketball</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+
+  {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}!</p>
+  {% else %}
+    <h1>Basketball Data</h1>
+  {% endif %}
+
+  <body>
+    <p>{{ api_data }}</p>
+  </body>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+{% endblock content %}
