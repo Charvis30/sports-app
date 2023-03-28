@@ -26,21 +26,16 @@ from basketball.views import(
     basketball_data,
 
 )
+from news.views import(
+    news,
+)
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', home_view, name="home"),
-    path('news/', news_view, name="news"),
     path('trending/', trending_view, name="trending"),
-    path("login/", login_view, name="login"),
-    path("register/", register_view, name="register"),
-    path('reset_password/', PasswordResetView.as_view(), name='reset_password'),
-    path('reset_password_sent/', PasswordResetDoneView.as_view(), name='password_reset_done'),
-    path('reset/<uidb64>/<token>/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
-    path('reset_password_complete/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
-    path('useraccounts/', include('django.contrib.auth.urls'), {'template_name': 'registration/login.html'}),
-    path('scores/', include('scores.urls')),
     path('basketball/', basketball_data, name="basketball"),
+    path('news/', news, name="news" ),
 ]

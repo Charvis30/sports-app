@@ -21,6 +21,8 @@ def trending_view(request):
 
 
 
+
+
 def register_view(request):
     form = UserCreationForm()
     if request.method == 'POST':

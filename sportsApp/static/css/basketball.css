@@ -113,8 +113,18 @@ a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
 /* table colors*/
-
-
+table a{
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    text-decoration: none;
+}
+.east, .west{
+    text-align: center;
+    font-family: sans-serif, Tahoma;
+    font-weight: lighter;
+    
+    border-collapse: collapse;
+    
+  }
   
   .east {
     width: 45%; float: right; 
@@ -128,14 +138,9 @@ a:active { text-decoration: none; }
     
   }
 
-  .east, .west{
-    text-align: center;
-    font-family: sans-serif, Tahoma;
-    font-weight: lighter;
-    
-    border-collapse: collapse;
-    
-  }
+  
+
+  
 
   caption{
     font-size: larger;
@@ -144,7 +149,15 @@ a:active { text-decoration: none; }
 
   table, td, th {
     border: 2px solid rgb(201, 201, 201);
+    
   }
+
+  body table{
+    font-family: sans-serif, Tahoma;
+    font-weight: lighter;
+  }
+
+  
 
 
   
