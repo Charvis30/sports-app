@@ -4,7 +4,7 @@
 
 {% load static %}
 <title>News</title>
-<link rel="stylesheet" type="text/css" href="{% static 'css/basketball.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
 
   {% if user.is_authenticated %}
     <p>Welcome, {{ user.username }}!</p>
@@ -13,7 +13,7 @@
   {% endif %}
 
 <body>
-    <table style="font-family: sans-serif, Tahoma; font-weight: lighter; border-collapse: collapse; margin: 30px;">
+    <table class="news">
         <thead>
             <tr>
                 <th>Title</th>
