@@ -71,8 +71,27 @@
 <br>
 <br>
 
-<h1>UPCOMING GAMES</h1>
 
+
+<table class="upcoming">
+  <caption>UPCOMING GAMES</caption>
+  <thead>
+    <tr>
+        <th>Date</th>
+        <th>Home</th>
+        <th>Away</th>
+    </tr>
+</thead>
+<tbody>
+    {% for game in games_data %}
+    <tr>
+        <td>{{ game.gameDate }}</td>
+        <td>{{ game.home }}</td>
+        <td>{{ game.away }}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
 
 
 

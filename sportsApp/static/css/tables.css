@@ -134,6 +134,9 @@ table{
     float: right; 
     margin-right: 20px;
 }
+.upcoming{
+    margin-left: 50px;
+}
 
 th {
     background-color: rgb(255, 91, 42);
