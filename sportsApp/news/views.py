@@ -25,10 +25,24 @@ def news(request):
     nfl_data = nfl_res.read()
     nfl_news_data = json.loads(nfl_data.decode("utf-8"))
 
-    # Combine the data from both APIs into a single dictionary
+    #MMA API
+    mma_conn = http.client.HTTPSConnection("top-sports-news.p.rapidapi.com")
+
+    headers = {
+        'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
+        'X-RapidAPI-Host': "top-sports-news.p.rapidapi.com"
+    }
+
+    mma_conn.request("GET", "/espn/mma", headers=headers)
+    res = mma_conn.getresponse()
+    data = res.read()
+    mma_news_data = json.loads(data.decode("utf-8"))
+
+    # Combine the data from all APIs into a single dictionary
     context = {
         'nba_news_data': nba_news_data,
-        'nfl_news_data': nfl_news_data
+        'nfl_news_data': nfl_news_data,
+        'mma_news_data': mma_news_data
     }
 
     # Render the HTML template with the combined data

@@ -21,7 +21,7 @@ from app1.views import (
 )
 from basketball.views import(
     basketball_data,
-    get_games_data,
+
 
 )
 from news.views import(
@@ -34,7 +34,6 @@ urlpatterns = [
     path('', home_view, name="home"),
     path('trending/', trending_view, name="trending"),
     path('basketball/', basketball_data, name="basketball"),
-    path('basketball/', get_games_data, name="games"),
 
     path('news/', news, name="news" ),
 ]
