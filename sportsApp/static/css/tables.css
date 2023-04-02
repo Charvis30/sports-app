@@ -113,10 +113,17 @@ a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
 /* tables */
+.table-container{
+    height: 400px; 
+    overflow-y: scroll;
+    margin-top: 50px;
+}
+
 table{
     font-family: sans-serif, Tahoma;
     font-weight: lighter;
 }
+
 .news {
     border-collapse: collapse;
     width: 80%;
