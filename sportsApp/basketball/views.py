@@ -30,7 +30,7 @@ def basketball_data(request):
         'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
         'X-RapidAPI-Host': "tank01-fantasy-stats.p.rapidapi.com"
     }
-    conn.request("GET", "/getNBAGamesForDate?gameDate=20221202", headers=headers)
+    conn.request("GET", "/getNBAGamesForDate?gameDate=20230402", headers=headers)
     res = conn.getresponse()
     data = res.read()
     games_data = json.loads(data.decode("utf-8"))

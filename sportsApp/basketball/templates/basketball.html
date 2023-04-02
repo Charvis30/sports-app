@@ -13,67 +13,82 @@
   {% endif %}
 
 
-
-<table class="east">
-  <caption>Eastern Conference</caption>
-  <thead>
-    <tr>
-      <th>Team Name</th>
-      <th>City</th>
-      <th>Division</th>
-      <th>Abbreviation</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for team in east_teams %}
-    <tr>
-      <td>{{ team.name }}</td>
-      <td>{{ team.city }}</td>
-      <td>{{ team.division }}</td>
-      <td>{{ team.abbreviation }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-
-
-<table class="west">
-  <caption>Western Conference</caption>
-  <thead>
-    <tr>
-      <th>Team Name</th>
-      <th>City</th>
-      <th>Division</th>
-      <th>Abbreviation</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for team in west_teams %}
-    <tr>
-      <td>{{ team.name }}</td>
-      <td>{{ team.city }}</td>
-      <td>{{ team.division }}</td>
-      <td>{{ team.abbreviation }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<div class="medium-container">
+  <table class="east">
+    <caption>Eastern Conference</caption>
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>City</th>
+        <th>Division</th>
+        <th>Abbreviation</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for team in east_teams %}
+      <tr>
+        <td>{{ team.name }}</td>
+        <td>{{ team.city }}</td>
+        <td>{{ team.division }}</td>
+        <td>{{ team.abbreviation }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 
 
-    
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="medium-container">
+  <table class="west">
+    <caption>Western Conference</caption>
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>City</th>
+        <th>Division</th>
+        <th>Abbreviation</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for team in west_teams %}
+      <tr>
+        <td>{{ team.name }}</td>
+        <td>{{ team.city }}</td>
+        <td>{{ team.division }}</td>
+        <td>{{ team.abbreviation }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+</div>
 
 
 
-<h1>Basketball Games on 02-04-2023</h1>
+
+<div class="small-container">
+  <table class="games">
+    <caption>Todays Games</caption>
+    <thead>
+      <tr>
+        <th>Home</th>
+        <th>VS</th>
+        <th>Away</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for game in games_data.body %}
+      <tr>
+        <td>{{ game.home }}</td>
+        <td>VS</td>
+        <td>{{ game.away }}</td>
+        <td>{{ game.gameDate }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>    
+  </table>
+</div>
 
   
 

@@ -1,31 +1,31 @@
 /* main */
 
-h1{
+h1 {
     font-family: sans-serif, Tahoma;
     font-weight: lighter;
     text-align: center;
     text-transform: uppercase;
 }
 
-body
-{
+body {
     margin: 0;
     padding: 0;
     background-color: rgb(255, 255, 255);
     font-family: 'fantasy';
 }
 
-a:hover{  
+a:hover {
     color: navy;
     box-shadow: inset 200px 0 0 0 #f2f2f2;
-    
+
 }
 
-a{
+a {
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
+
 /* NAV BAR  */
-.topnav a:hover{
+.topnav a:hover {
     color: navy;
 }
 
@@ -35,7 +35,7 @@ a{
     color: rgb(255, 91, 42);
     text-decoration: none;
     text-align: center;
-                                                
+
 }
 
 .topnav {
@@ -44,7 +44,7 @@ a{
 }
 
 
-.topnav .topright{
+.topnav .topright {
     float: right;
 }
 
@@ -59,10 +59,11 @@ a{
     font-family: sans-serif, Tahoma;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover,
+.dropdown:hover .dropbtn {
     background-color: white;
     color: navy;
-  }
+}
 
 .dropdown {
     float: left;
@@ -76,7 +77,7 @@ a{
     padding: 14px 16px;
     background-color: inherit;
     font-family: sans-serif, Tahoma;
-    font-weight: lighter; 
+    font-weight: lighter;
     margin: 0;
 }
 
@@ -96,10 +97,12 @@ a{
     width: 100px;
     display: block;
 }
-.dropdown-content a{
+
+.dropdown-content a {
     width: 68px;
     text-align: left;
 }
+
 .dropdown-content a:hover {
     background-color: white;
     width: 68px;
@@ -107,19 +110,30 @@ a{
 
 
 
-a:link { text-decoration: none; }
-a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:active { text-decoration: none; }
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
 
 /* tables */
-.table-container{
-    height: 400px; 
+.table-container {
+    height: 400px;
     overflow-y: scroll;
     margin-top: 50px;
 }
 
-table{
+table {
     font-family: sans-serif, Tahoma;
     font-weight: lighter;
 }
@@ -131,32 +145,45 @@ table{
     margin-right: auto;
 
 }
-.west{
-    width: 45%; 
-    float: left; 
-    margin-left: 20px; 
+
+.west {
+    width: 30%;
+    float: left;
+    margin-left: 20px;
 }
-.east{
-    width: 45%; 
-    float: right; 
+
+.east {
+    width: 30%;
+    float: right;
     margin-right: 20px;
 }
-.upcoming{
-    margin-left: 50px;
+.games{
+    width: 80%;
 }
+
+.small-container {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
 
 th {
     background-color: rgb(255, 91, 42);
     color: black;
 }
 
-th, td {
+th,
+td {
     text-align: left;
     padding: 10px;
-}  
+}
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
-    
-}
 
+}
