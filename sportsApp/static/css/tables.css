@@ -135,6 +135,13 @@ a:active {
     margin-right: auto;
     
 }
+.news-container{
+    height: 400px;
+    overflow-y: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
 .score{
     background-color: rgb(255, 91, 42); 
     font-weight: bolder;

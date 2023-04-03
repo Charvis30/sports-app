@@ -13,7 +13,7 @@
 {% endif %}
 
 <!-- NBA News -->
-<div class="table-container">
+<div class="news-container">
   <table class="news">
     <caption>Basketball News</caption>
     <thead>
@@ -36,7 +36,7 @@
 </div>
 
 <!-- NFL News -->
-<div class="table-container">
+<div class="news-container">
   <table class="news">
     <caption>American Football News</caption>
     <thead>
@@ -58,8 +58,28 @@
   </table>
 </div>
 
-<!-- MMA News -->
-
+<!-- soccer News -->
+<div class="news-container">
+  <table class="news">
+    <caption>Soccer News</caption>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Source</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for article in soccer_news_data %}
+      <tr>
+        <td>{{ article.id }}</td>
+        <td>{{ article.source }}</td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 
 
 
