@@ -22,6 +22,7 @@ from app1.views import (
 )
 from sports.views import(
     basketball_data,
+    baseball_data
 
 
 )
@@ -36,5 +37,6 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('trending/', trending_view, name="trending"),
     path('basketball/', basketball_data, name="basketball"),
+    path('baseball/', baseball_data, name='baseball'),
     path('news/', news, name="news" ),
 ]

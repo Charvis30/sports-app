@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<title>Baseball</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
+
+  {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}!</p>
+  {% else %}
+    <h1>Today's Games</h1>
+  {% endif %}
+
+
+<div class="table-container">
+  <table class="games">
+    <thead>
+      <tr>
+        <th>Home</th>
+        <th>VS</th>
+        <th>Away</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for game in games_data %}
+      <tr>
+        <td>{{ game.home_team }} <div class="score">{{game.scores.0.score}}</div></td>
+        <td>vs</td>
+        <td>{{ game.away_team }} <div class="score">{{game.scores.1.score}}</div></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+{% endblock content %}
