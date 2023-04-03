@@ -20,7 +20,7 @@ from app1.views import (
     trending_view,
     contact,
 )
-from basketball.views import(
+from sports.views import(
     basketball_data,
 
 
