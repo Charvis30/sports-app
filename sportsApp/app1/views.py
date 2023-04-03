@@ -1,46 +1,32 @@
+from django.conf import settings
+from django.core.mail import send_mail
 from django.shortcuts import render
-from django.shortcuts import redirect
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login
-
-
-# Create your views here.
 
 def home_view(request):
+    """Creates view for the hompage"""
     context = {'title': 'Home Page'}
     return render(request, "app1/home.html", context)
 
-def news_view(request):
-    context = {'title': 'News'}
-    return render(request, "news/news.html", context)
+def contact(request):
+    """Creates contact page form"""
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+
+        # Send email using Django's built-in email sending function
+        send_mail(
+            'Contact Form Submission',
+            f'Name: {name}\nEmail: {email}\nMessage: {message}',
+            email,
+            [settings.EMAIL_HOST_USER],
+            fail_silently=False,
+        )
+
+    return render(request, 'app1/contact.html')
 
 def trending_view(request):
     context = {'title': 'Trending'}
     return render(request, "news/trending.html", context)
-
-
-
-
-
-def register_view(request):
-    form = UserCreationForm()
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('home')
-    return render(request, "useraccounts/createAccount.html",{'form': form})
-
-def login_view(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, request.POST)
-        if form.is_valid():
-            login(request, form.get_user())
-            return redirect('home')
-    else:
-        form = AuthenticationForm()
-    return render(request, "useraccounts/login.html",  {'form': form})
 
 

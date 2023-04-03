@@ -133,17 +133,19 @@ a:active {
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    
+
 }
-.news-container{
+
+.news-container {
     height: 400px;
     overflow-y: scroll;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
 }
-.score{
-    background-color: rgb(255, 91, 42); 
+
+.score {
+    background-color: rgb(255, 91, 42);
     font-weight: bolder;
     text-align: center;
 }
@@ -164,7 +166,7 @@ table {
 
 }
 
-.games{
+.games {
     text-align: center;
     width: 80%;
     margin-left: auto;
@@ -197,4 +199,76 @@ td {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 
+}
+
+
+/*form*/
+form {
+    font-family: sans-serif, Tahoma;
+    font-weight: lighter;
+    text-align: left;
+}
+
+.form-container {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 80%;
+    font-family: sans-serif, Tahoma;
+    font-weight: lighter;
+}
+
+.contact-form {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+input[type=text],
+input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: sans-serif, Tahoma;
+    font-weight: lighter;
+    padding-left: 10px;
+
+}
+
+textarea {
+    width: 100%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: sans-serif, Tahoma;
+    font-weight: lighter;
+    padding-left: 10px;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: rgb(255, 130, 92);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(255, 91, 42);
+}
+
+.contact-info {
+    font-family: sans-serif, Tahoma;
+    font-weight: lighter;
 }

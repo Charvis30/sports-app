@@ -18,6 +18,7 @@ from django.urls import path
 from app1.views import (
     home_view,
     trending_view,
+    contact,
 )
 from basketball.views import(
     basketball_data,
@@ -32,8 +33,8 @@ from news.views import(
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', home_view, name="home"),
+    path('contact/', contact, name='contact'),
     path('trending/', trending_view, name="trending"),
     path('basketball/', basketball_data, name="basketball"),
-
     path('news/', news, name="news" ),
 ]
