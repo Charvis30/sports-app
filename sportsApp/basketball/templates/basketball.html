@@ -9,86 +9,43 @@
   {% if user.is_authenticated %}
     <p>Welcome, {{ user.username }}!</p>
   {% else %}
-    <h1>Basketball Data</h1>
+    <h1>Today's Games</h1>
   {% endif %}
 
 
-<div class="medium-container">
-  <table class="east">
-    <caption>Eastern Conference</caption>
+<div class="table-container">
+  <table class="games">
     <thead>
       <tr>
-        <th>Team Name</th>
-        <th>City</th>
-        <th>Division</th>
-        <th>Abbreviation</th>
+        <th>Home</th>
+        <th>VS</th>
+        <th>Away</th>
       </tr>
     </thead>
     <tbody>
-      {% for team in east_teams %}
+      {% for game in games_data %}
       <tr>
-        <td>{{ team.name }}</td>
-        <td>{{ team.city }}</td>
-        <td>{{ team.division }}</td>
-        <td>{{ team.abbreviation }}</td>
+        <td>{{ game.home_team }} <div class="score">{{game.scores.0.score}}</div></td>
+        <td>vs</td>
+        <td>{{ game.away_team }} <div class="score">{{game.scores.1.score}}</div></td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-</div>
-
-
-<div class="medium-container">
-  <table class="west">
-    <caption>Western Conference</caption>
-    <thead>
-      <tr>
-        <th>Team Name</th>
-        <th>City</th>
-        <th>Division</th>
-        <th>Abbreviation</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for team in west_teams %}
-      <tr>
-        <td>{{ team.name }}</td>
-        <td>{{ team.city }}</td>
-        <td>{{ team.division }}</td>
-        <td>{{ team.abbreviation }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  
+  
+  
+  
+  
   
 </div>
 
 
 
 
-<div class="small-container">
-  <table class="games">
-    <caption>Todays Games</caption>
-    <thead>
-      <tr>
-        <th>Home</th>
-        <th>VS</th>
-        <th>Away</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for game in games_data.body %}
-      <tr>
-        <td>{{ game.home }}</td>
-        <td>VS</td>
-        <td>{{ game.away }}</td>
-        <td>{{ game.gameDate }}</td>
-      </tr>
-      {% endfor %}
-      </tbody>    
-  </table>
-</div>
+
+
+
 
   
 
