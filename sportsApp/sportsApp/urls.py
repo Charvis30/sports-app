@@ -25,6 +25,7 @@ from sports.views import(
     basketball_data,
     baseball_data,
     hockey_data,
+    soccer_data
 
 
 )
@@ -42,5 +43,6 @@ urlpatterns = [
     path('basketball/', basketball_data, name="basketball"),
     path('baseball/', baseball_data, name='baseball'),
     path('hockey/', hockey_data, name='hockey'),
+    path('soccer/', soccer_data, name='soccer'),
     path('news/', news, name="news" ),
 ]
