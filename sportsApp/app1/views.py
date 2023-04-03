@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.core.mail import send_mail
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 
 def home_view(request):
     """Creates view for the hompage"""
@@ -23,7 +24,15 @@ def contact(request):
             fail_silently=False,
         )
 
+        # Render the contact page with a thank you message
+        return render(request, 'app1/contact.html', {'thank_you': True})
+
     return render(request, 'app1/contact.html')
+
+def about(request):
+    """Creates about page """
+    context = {'title': 'About'}
+    return render(request, "app1/about.html", context)
 
 def trending_view(request):
     context = {'title': 'Trending'}

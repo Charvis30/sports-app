@@ -7,6 +7,9 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}" />
 
 <h1>Contact Us</h1>
+{% if thank_you %}
+    <p>Thank you for your message.</p>
+{% endif %}
 
 <div class="form-container">
     <form method="post" class="contact-form">

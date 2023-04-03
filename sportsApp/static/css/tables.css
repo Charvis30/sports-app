@@ -272,3 +272,15 @@ input[type=submit]:hover {
     font-family: sans-serif, Tahoma;
     font-weight: lighter;
 }
+
+.about-container{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 50%;
+    font-family: sans-serif, Tahoma;
+    font-weight: lighter;
+}
