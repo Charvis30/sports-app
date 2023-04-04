@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     "app1","sportsApp","sports","news",
 
     #django apps
-    "useraccounts",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

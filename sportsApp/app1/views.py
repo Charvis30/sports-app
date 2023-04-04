@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.core.mail import send_mail
-from django.shortcuts import render, redirect
-from django.contrib import messages
+from django.shortcuts import render
+
 
 def home_view(request):
     """Creates view for the hompage"""
