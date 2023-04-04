@@ -128,4 +128,4 @@ def soccer_data(request):
         'odds_data': odds_data
     }
     
-    return render(request, 'hockey.html', context)
+    return render(request, 'soccer.html', context)

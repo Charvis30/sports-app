@@ -37,4 +37,14 @@ class HockeyDataTestCase(TestCase):
         self.assertIn('odds_data', response.context)
         self.assertTemplateUsed(response, 'hockey.html')
 
+class SoccerDataTestCase(TestCase):
+    def test_soccer_data(self):
+        url = reverse('soccer')
+        response = self.client.get(url)
+        
+        # Check if the response contains the expected data
+        self.assertIn('games_data', response.context)
+        self.assertIn('odds_data', response.context)
+        self.assertTemplateUsed(response, 'soccer.html')
+
 
