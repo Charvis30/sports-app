@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<title>Trending</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}" />
+
+{% if user.is_authenticated %}
+<p>Welcome, {{ user.username }}!</p>
+{% else %}
+<h1>Trending</h1>
+{% endif %}
+
+<!-- NBA News -->
+<div class="news-container">
+  <table class="news">
+    <caption> Trending Basketball News</caption>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Headline</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for article in nba_news_data %}
+      <tr>
+        <td><img src="{{ article.urlToImage }}" alt="Article Image" width="100"></td>
+        <td><a href="{{ article.url }}">{{ article.title }}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- NFL News -->
+<div class="news-container">
+  <table class="news">
+    <caption>Trending Football News</caption>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Headline</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for article in nfl_news_data %}
+      <tr>
+        <td><img src="{{ article.urlToImage }}" alt="Article Image" width="100"></td>
+        <td><a href="{{ article.url }}">{{ article.title }}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- Soccer News -->
+<div class="news-container">
+  <table class="news">
+    <caption>Trending Soccer News</caption>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Headline</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for article in soccer_news_data %}
+      <tr>
+        <td><img src="{{ article.urlToImage }}" alt="Article Image" width="100"></td>
+        <td><a href="{{ article.url }}">{{ article.title }}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock content %}
