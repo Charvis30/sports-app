@@ -17,7 +17,9 @@ class BaseballDataTestCase(TestCase):
 
 
 class BasketballDataTestCase(TestCase):
+    """testing baseball data"""
     def test_baseball_data(self):
+        """testing baseball data"""
         url = reverse('basketball')
         response = self.client.get(url)
         
@@ -28,7 +30,9 @@ class BasketballDataTestCase(TestCase):
 
 
 class HockeyDataTestCase(TestCase):
-    def test_baseball_data(self):
+    """testing hockey data"""
+    def test_hockey_data(self):
+        """testing hockey data"""
         url = reverse('hockey')
         response = self.client.get(url)
         
