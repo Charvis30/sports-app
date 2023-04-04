@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path
 from app1.views import (
     home_view,
-    trending_view,
     contact,
     about,
 )
@@ -33,16 +32,21 @@ from news.views import(
     news,
 )
 
+from trending.views import(
+  trending
+
+
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', home_view, name="home"),
     path('contact/', contact, name='contact'),
     path('about/', about, name='about'),
-    path('trending/', trending_view, name="trending"),
     path('basketball/', basketball_data, name="basketball"),
     path('baseball/', baseball_data, name='baseball'),
     path('hockey/', hockey_data, name='hockey'),
     path('soccer/', soccer_data, name='soccer'),
-    path('news/', news, name="news" ),
+    path('news/', news, name="news"),
+    path('trending/', trending, name='trending')
 ]

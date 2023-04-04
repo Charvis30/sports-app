@@ -34,8 +34,6 @@ def about(request):
     context = {'title': 'About'}
     return render(request, "app1/about.html", context)
 
-def trending_view(request):
-    context = {'title': 'Trending'}
-    return render(request, "news/trending.html", context)
+
 
 

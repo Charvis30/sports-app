@@ -3,7 +3,6 @@ from django.urls import reverse
 
 
 
-
 # Create your tests here.
 class BaseballDataTestCase(TestCase):
     def test_baseball_data(self):
