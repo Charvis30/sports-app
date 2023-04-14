@@ -25,9 +25,9 @@
     <tbody>
       {% for game in games_data %}
       <tr>
-        <td>{{ game.home_team }} <div class="score">{{game.scores.0.score}}</div></td>
+        <td> <a href="#">{{ game.home_team }}</a> <div class="score">{{game.scores.0.score}}</div></td>
         <td>vs</td>
-        <td>{{ game.away_team }} <div class="score">{{game.scores.1.score}}</div></td>
+        <td> <a href="#">{{ game.away_team }}</a> <div class="score">{{game.scores.1.score}}</div></td>
       </tr>
       {% endfor %}
     </tbody>
