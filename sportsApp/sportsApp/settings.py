@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
 
     #my apps
-    "app1","sportsApp","sports","news",'trending',
+    "app1","sportsApp","sports","news",'trending', "rosters",
 
     #django apps
     "django.contrib.admin",
