@@ -35,7 +35,11 @@ from news.views import(
 from trending.views import(
   trending
 
+)
 
+from rosters.views import(
+    nba_teams,
+   
 )
 
 urlpatterns = [
@@ -48,5 +52,6 @@ urlpatterns = [
     path('hockey/', hockey_data, name='hockey'),
     path('soccer/', soccer_data, name='soccer'),
     path('news/', news, name="news"),
-    path('trending/', trending, name='trending')
+    path('trending/', trending, name='trending'),
+    path('nbateams/', nba_teams, name='nbateams')
 ]
