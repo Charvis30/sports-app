@@ -6,11 +6,11 @@
 <title>Basketball</title>
 <link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
 
-  {% if user.is_authenticated %}
-    <p>Welcome, {{ user.username }}!</p>
-  {% else %}
-    <h1>Today's Games</h1>
-  {% endif %}
+<h1>Upcoming Games</h1>
+
+<div class="button">
+  <h2><a href="{% url 'nbateams' %}">All NBA Teams</a></h2>
+</div>
 
 
 <div class="table-container">
@@ -33,7 +33,7 @@
     </tbody>
   </table>
   
-<p><a href="{% url 'nbateams' %}">All Teams</a></p>
+
   
   
   

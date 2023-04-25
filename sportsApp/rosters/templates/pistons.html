@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<title>Roster</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
+
+
+<div class="table-container">
+    <table class="players">
+        <thead>
+            <th>Player Name</th>
+            <th>Jersey Number</th>
+            <th>Position</th>
+            <th>Height</th>
+            <th>College Attended</th>
+        </thead>
+        <tbody>
+            {% for player in detroit_roster.body.roster %}
+            <tr>
+                <td>{{ player.espnName }}</td>
+                <td>{{ player.jerseyNum }}</td>
+                <td> {{ player.pos }}</td>
+                <td> {{ player.height }}</td>
+                <td> {{ player.college }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

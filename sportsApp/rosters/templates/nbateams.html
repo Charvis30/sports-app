@@ -14,14 +14,16 @@
             <th>Conference</th>
             <th>Team Record</th>
             <th>PPG</th>
+            <th>Points Allowed</th>
         </thead>
         <tbody>
             {% for team in teams.body %}
             <tr>
-                <td> <a href="#">{{ team.teamCity }} {{ team.teamName }}</a></td>
+                <td> <a href="{% url team.teamName %}">{{ team.teamCity }} {{ team.teamName }}</a></td>
                 <td>{{ team.conference }}</td>
                 <td> {{ team.wins}} - {{ team.loss }}</td>
                 <td> {{ team.ppg}}</td>
+                <td> {{team.oppg}}</td>
             </tr>
             {% endfor %}
         </tbody>
