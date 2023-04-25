@@ -25,7 +25,11 @@ a {
 }
 
 /* NAV BAR  */
-.topnav a:hover {
+footer{
+    text-align: center;
+}
+
+.topnav a:hover, footer{
     color: navy;
 }
 
@@ -35,20 +39,21 @@ a {
     color: rgb(255, 91, 42);
     text-decoration: none;
     text-align: center;
-
+                                                
 }
 
-.topnav {
+.topnav, footer{
     background-color: rgb(255, 91, 42);
     overflow: hidden;
 }
 
 
-.topnav .topright {
+.topnav .topright, .topright{
     float: right;
 }
 
-.topnav a {
+
+.topnav a, footer a {
     float: left;
     color: white;
     text-align: center;
