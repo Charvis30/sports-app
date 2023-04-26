@@ -321,3 +321,8 @@ footer{
     padding-top: 15px;
 
 }
+
+.red{
+    color: red;
+    display: inline;
+}

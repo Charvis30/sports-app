@@ -3,7 +3,7 @@
 {% block content %}
 
 {% load static %}
-<title>NBA</title>
+<title>MLB</title>
 <link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
 
 
@@ -13,17 +13,17 @@
             <th>Team Name</th>
             <th>Conference</th>
             <th>Team Record (W - <div class="red">L</div>)</th>
-            <th>PPG</th>
-            <th>Points Allowed</th>
+            <th>Runs Scored</th>
+            <th>Runs Allowed</th>
         </thead>
         <tbody>
             {% for team in teams.body %}
             <tr>
                 <td> <a href="{% url team.teamName %}">{{ team.teamCity }} {{ team.teamName }}</a></td>
-                <td>{{ team.conference }}</td>
-                <td>{{ team.wins}} - <div class="red">{{ team.loss }}</div></td>
-                <td>{{ team.ppg}}</td>
-                <td><div class="red">{{team.oppg}}</div></td>
+                <td>{{team.conference}}</td>
+                <td>{{team.wins}} - <div class="red">{{team.loss}}</div></td>
+                <td>{{team.rs}}</td>
+                <td><div class="red">{{team.ra}}</div></td>
             </tr>
             {% endfor %}
         </tbody>

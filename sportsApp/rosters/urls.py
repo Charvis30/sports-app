@@ -2,7 +2,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+
+    ##NBA##
     path('nbateams/', views.nba_teams, name='nbateams'),
+
     path('lakers/', views.la_roster, name='lakers'),
     path('clippers/', views.lac_roster, name='clippers'),
     path('warriors/', views.goldenstate_roster, name='warriors'),
@@ -33,5 +36,41 @@ urlpatterns = [
     path('pelicans/', views.neworleans_roster, name='pelicans'),
     path('kings/', views.sacramento_roster, name='kings'),
     path('wizards/', views.washington_roster, name='wizards'),
+
+    ##MLB##
+
+    path('mlbteams/', views.mlb_teams, name='mlbteams'),
+
+    path('yankees/', views.yankees_roster, name='Yankees'),
+    path('redsox/', views.red_sox_roster, name='Red Sox'),
+    path('orioles/', views.orioles_roster, name='Orioles'),
+    path('rays/', views.rays_roster, name='Rays'),
+    path('bluejays/', views.blue_jays_roster, name='Blue Jays'),
+    path('whitesox/', views.white_sox_roster, name='White Sox'),
+    path('indians/', views.indians_roster, name='Indians'),
+    path('tigers/', views.tigers_roster, name='Tigers'),
+    path('royals/', views.royals_roster, name='Royals'),
+    path('twins/', views.twins_roster, name='Twins'),
+    path('astros/', views.astros_roster, name='Astros'),
+    path('angels/', views.angels_roster, name='Angels'),
+    path('athletics/', views.athletics_roster, name='Athletics'),
+    path('mariners/', views.mariners_roster, name='Mariners'),
+    path('rangers/', views.rangers_roster, name='Rangers'),
+    path('braves/', views.braves_roster, name='Braves'),
+    path('marlins/', views.marlins_roster, name='Marlins'),
+    path('mets/', views.mets_roster, name='Mets'),
+    path('phillies/', views.phillies_roster, name='Phillies'),
+    path('nationals/', views.nationals_roster, name='Nationals'),
+    path('cubs/', views.cubs_roster, name='Cubs'),
+    path('reds/', views.reds_roster, name='Reds'),
+    path('brewers/', views.brewers_roster, name='Brewers'),
+    path('pirates/', views.pirates_roster, name='Pirates'),
+    path('cardinals/', views.cardinals_roster, name='Cardinals'),
+    path('diamondbacks/',views.dbacks_roster, name='Diamondbacks'),
+    path('rockies/', views.rockies_roster, name='Rockies'),
+    path('dodgers/', views.dodgers_roster, name='Dodgers'),
+    path('padres/', views.padres_roster, name='Padres'),
+    path('giants/', views.giants_roster, name='Giants'),
+    path('guardians/', views.guardians_roster, name='Guardians'),
     
 ]
