@@ -305,3 +305,19 @@ footer{
     background-color: rgb(255, 91, 42);
     overflow: hidden;
 }
+
+.logo{
+    margin-left: auto;
+    margin-right: auto;
+    height: 120px;
+    width: 120px;
+}
+
+.nba-logo{
+    margin-left: auto;
+    margin-right: auto;
+    height: 120px;
+    width: 120px;
+    padding-top: 15px;
+
+}
