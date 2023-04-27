@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<title>New England Patriots</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
+
+<div class="logo">
+    <img src="{% static 'images/nfl-logos/patriots.png' %}" class="nba-logo">
+</div>
+
+
+<div class="table-container">
+    <table class="players">
+        <thead>
+            <th>Player Name</th>
+            <th>Jersey Number</th>
+            <th>Position</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Age</th>
+            <th>College Attended</th>
+        </thead>
+        <tbody>
+            {% for player in nfl_roster.body.roster %}
+            <tr>
+                <td>{{ player.espnName }}</td>
+                <td>{{ player.jerseyNum }}</td>
+                <td> {{ player.pos }}</td>
+                <td> {{ player.height }}</td>
+                <td> {{ player.weight }}</td>
+                <td> {{ player.age }}</td>
+                <td> {{ player.school }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

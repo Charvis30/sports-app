@@ -9,7 +9,7 @@
 <h1>Upcoming Games</h1>
 
 <div class="button">
-  <h2><a href="{% url 'nbateams' %}">All NBA Teams</a></h2>
+  <h2><a href="{% url 'nbateams' %}">NBA Teams</a></h2>
 </div>
 
 
@@ -25,9 +25,9 @@
     <tbody>
       {% for game in games_data %}
       <tr>
-        <td> <a href="#">{{ game.home_team }}</a> <div class="score">{{game.scores.0.score}}</div></td>
+        <td> {{ game.home_team }}<div class="score">{{game.scores.0.score}}</div></td>
         <td>vs</td>
-        <td> <a href="#">{{ game.away_team }}</a> <div class="score">{{game.scores.1.score}}</div></td>
+        <td>{{ game.away_team }} <div class="score">{{game.scores.1.score}}</div></td>
       </tr>
       {% endfor %}
     </tbody>

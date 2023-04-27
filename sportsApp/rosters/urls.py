@@ -96,7 +96,7 @@ urlpatterns = [
     path("cowboys/", views.nfl_roster, {"team_abv": "DAL"}, name="Cowboys"),
     path("giants/", views.nfl_roster, {"team_abv": "NYG"}, name="Giants"),
     path("eagles/", views.nfl_roster, {"team_abv": "PHI"}, name="Eagles"),
-    path("commanders/", views.nfl_roster, {"team_abv": "WAS"}, name="Commanders"),
+    path("commanders/", views.nfl_roster, {"team_abv": "WSH"}, name="Commanders"),
     path("bears/", views.nfl_roster, {"team_abv": "CHI"}, name="Bears"),
     path("lions/", views.nfl_roster, {"team_abv": "DET"}, name="Lions"),
     path("packers/", views.nfl_roster, {"team_abv": "GB"}, name="Packers"),
@@ -106,7 +106,7 @@ urlpatterns = [
     path("saints/", views.nfl_roster, {"team_abv": "NO"}, name="Saints"),
     path("buccaneers/", views.nfl_roster, {"team_abv": "TB"}, name="Buccaneers"),
     path("cardinals/", views.nfl_roster, {"team_abv": "ARI"}, name="Cardinals"),
-    path("rams/", views.nfl_roster, {"team_abv": "LA"}, name="Rams"),
+    path("rams/", views.nfl_roster, {"team_abv": "LAR"}, name="Rams"),
     path("49ers/", views.nfl_roster, {"team_abv": "SF"}, name="49ers"),
     path("seahawks/", views.nfl_roster, {"team_abv": "SEA"}, name="Seahawks"),
 
