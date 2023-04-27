@@ -6,6 +6,9 @@
 <title>MLB</title>
 <link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
 
+<div class="logo">
+    <img src="{% static 'images/mlb-logos/mlb.png' %}" class="nba-logo">
+</div>
 
 <div class="table-container">
     <table class="teams">
@@ -22,8 +25,8 @@
                 <td> <a href="{% url team.teamName %}">{{ team.teamCity }} {{ team.teamName }}</a></td>
                 <td>{{team.conference}}</td>
                 <td>{{team.wins}} - <div class="red">{{team.loss}}</div></td>
-                <td>{{team.rs}}</td>
-                <td><div class="red">{{team.ra}}</div></td>
+                <td>{{team.RS}}</td>
+                <td><div class="red">{{team.RA}}</div></td>
             </tr>
             {% endfor %}
         </tbody>

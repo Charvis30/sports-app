@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<title>San Diego Padres</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
+
+<div class="logo">
+    <img src="{% static 'images/mlb-logos/padres.png' %}" class="nba-logo">
+</div>
+
+
+<div class="table-container">
+    <table class="players">
+        <thead>
+            <th>Player Name</th>
+            <th>Jersey Number</th>
+            <th>Position</th>
+            <th>Height</th>
+            <th>Hand</th>
+        </thead>
+        <tbody>
+            {% for player in team_roster.body.roster %}
+            <tr>
+                <td>{{ player.longName }}</td>
+                <td>{{ player.jerseyNum }}</td>
+                <td> {{ player.pos }}</td>
+                <td> {{ player.height }}</td>
+                <td> {{ player.bat }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

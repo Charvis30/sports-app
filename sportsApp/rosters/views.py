@@ -507,7 +507,7 @@ def get_team_roster(team_abv):
 def dbacks_roster(request):
     team_roster = get_team_roster("ARI")
     context = {"team_roster": team_roster}
-    return render(request, "mlb-teams/dbacks.html", context)
+    return render(request, "mlb-teams/diamondbacks.html", context)
 
 def braves_roster(request):
     team_roster = get_team_roster("ATL")
@@ -530,7 +530,7 @@ def cubs_roster(request):
     return render(request, "mlb-teams/cubs.html", context)
 
 def white_sox_roster(request):
-    team_roster = get_team_roster("CWS")
+    team_roster = get_team_roster("CHW")
     context = {"team_roster": team_roster}
     return render(request, "mlb-teams/white_sox.html", context)
 
@@ -538,11 +538,6 @@ def reds_roster(request):
     team_roster = get_team_roster("CIN")
     context = {"team_roster": team_roster}
     return render(request, "mlb-teams/reds.html", context)
-
-def indians_roster(request):
-    team_roster = get_team_roster("CLE")
-    context = {"team_roster": team_roster}
-    return render(request, "mlb-teams/indians.html", context)
 
 def rockies_roster(request):
     team_roster = get_team_roster("COL")
@@ -640,17 +635,17 @@ def rays_roster(request):
     return render(request, "mlb-teams/rays.html", context)
 
 def blue_jays_roster(request):
-    team_roster = get_team_roster("TB")
+    team_roster = get_team_roster("TOR")
     context = {"team_roster": team_roster}
     return render(request, "mlb-teams/bluejays.html", context)
 
 def nationals_roster(request):
-    team_roster = get_team_roster("TB")
+    team_roster = get_team_roster("WAS")
     context = {"team_roster": team_roster}
     return render(request, "mlb-teams/nationals.html", context)
 
 def rangers_roster(request):
-    team_roster = get_team_roster("TB")
+    team_roster = get_team_roster("TEX")
     context = {"team_roster": team_roster}
     return render(request, "mlb-teams/rangers.html", context)
 

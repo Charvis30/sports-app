@@ -73,7 +73,7 @@ from rosters.views import(
     washington_roster,
     goldenstate_roster,
 
-    orioles_roster, red_sox_roster, white_sox_roster, indians_roster, 
+    orioles_roster, red_sox_roster, white_sox_roster, 
     tigers_roster, astros_roster, royals_roster, angels_roster, twins_roster, 
     yankees_roster, athletics_roster, mariners_roster, rays_roster, rangers_roster,
     blue_jays_roster, dbacks_roster, braves_roster, cubs_roster, reds_roster, rockies_roster, 
@@ -143,7 +143,6 @@ urlpatterns = [
     path('rays/', rays_roster, name='Rays'),
     path('bluejays/', blue_jays_roster, name='Blue Jays'),
     path('whitesox/', white_sox_roster, name='White Sox'),
-    path('indians/', indians_roster, name='Indians'),
     path('tigers/', tigers_roster, name='Tigers'),
     path('royals/', royals_roster, name='Royals'),
     path('twins/', twins_roster, name='Twins'),
