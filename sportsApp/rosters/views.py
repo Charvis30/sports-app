@@ -653,3 +653,41 @@ def guardians_roster(request):
     team_roster = get_team_roster("CLE")
     context = {"team_roster": team_roster}
     return render(request, "mlb-teams/guardians.html", context)
+
+
+###########NFL################
+
+def nfl_teams(request):
+    conn = http.client.HTTPSConnection("tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com")
+    headers = {
+        'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
+        'X-RapidAPI-Host': "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
+    }
+    conn.request("GET", "/getNFLTeams?rosters=true&schedules=false", headers=headers)
+    res = conn.getresponse()
+    data = res.read()
+    data = json.loads(data.decode("utf-8"))
+
+    context = {'teams': data}
+    return render(request, 'nflteams.html', context)
+
+def get_nfl_roster(team_abv):
+    conn = http.client.HTTPSConnection("tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com")
+    headers = {
+        'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
+        'X-RapidAPI-Host': "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
+    }
+    conn.request("GET", f"/getNFLTeamRoster?teamAbv={team_abv}", headers=headers)
+    res = conn.getresponse()
+    data = res.read()
+    return json.loads(data.decode("utf-8"))
+
+
+def nfl_roster(request, team_abv):
+    nfl_roster = get_nfl_roster(team_abv)
+    context = {"nfl_roster": nfl_roster}
+    return render(request, f"nfl-teams/{team_abv.lower()}.html", context)
+
+
+
+

@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from app1.views import (
     home_view,
     contact,
@@ -40,6 +40,7 @@ from trending.views import(
 from rosters.views import(
     nba_teams,
     mlb_teams,
+    nfl_teams,
 
 
     la_roster,
@@ -79,6 +80,8 @@ from rosters.views import(
     blue_jays_roster, dbacks_roster, braves_roster, cubs_roster, reds_roster, rockies_roster, 
     dodgers_roster, marlins_roster, brewers_roster, mets_roster, phillies_roster, pirates_roster, padres_roster, 
     giants_roster, cardinals_roster, nationals_roster, guardians_roster,
+
+    
    
 )
 
@@ -167,7 +170,12 @@ urlpatterns = [
     path('padres/', padres_roster, name='Padres'),
     path('giants/', giants_roster, name='Giants'),
     path('guardians/', guardians_roster, name='Guardians'),
+
+
+    ##NFL
+    path('nflteams/', nfl_teams, name='nflteams'),
     
+    path("rosters/", include("rosters.urls")),
 
 
     

@@ -21,13 +21,11 @@
         <div class="dropdown">
             <button class="dropbtn">Sports<i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
-              <a href="{% url 'basketball' %}">Basketball</a>
-              <a href="#">Football</a>
-              <a href="#">MMA</a>
+              <a href="{% url 'basketball' %}">NBA</a>
+              <a href="#">NFL</a>
               <a href="{% url 'soccer' %}">Soccer</a>
-              <a href="{% url 'baseball' %}">Baseball</a>
-              <a href="{% url 'hockey' %}">Hockey</a>
-              <a href="#">Boxing</a>
+              <a href="{% url 'baseball' %}">MLB</a>
+              <a href="{% url 'hockey' %}">NHL</a>
             </div>
           </div>
         <a href="{% url 'news' %}">News</a>
@@ -52,7 +50,7 @@
             <a href="{% url 'nbateams' %}">NBA Teams</a>
             <a href="{% url 'mlbteams' %}">MLB Teams</a>
             <a href="#">NHL Teams</a>
-            <a href="">NFL Teams</a>
+            <a href="{% url 'nflteams' %}">NFL Teams</a>
         </div>
     </footer>
 

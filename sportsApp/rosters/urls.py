@@ -47,7 +47,6 @@ urlpatterns = [
     path('rays/', views.rays_roster, name='Rays'),
     path('bluejays/', views.blue_jays_roster, name='Blue Jays'),
     path('whitesox/', views.white_sox_roster, name='White Sox'),
-    path('indians/', views.indians_roster, name='Indians'),
     path('tigers/', views.tigers_roster, name='Tigers'),
     path('royals/', views.royals_roster, name='Royals'),
     path('twins/', views.twins_roster, name='Twins'),
@@ -72,5 +71,44 @@ urlpatterns = [
     path('padres/', views.padres_roster, name='Padres'),
     path('giants/', views.giants_roster, name='Giants'),
     path('guardians/', views.guardians_roster, name='Guardians'),
+
+
+    ##NFL
+    path('nflteams/', views.nfl_teams, name='nflteams'),
+
+
+    path("jets/", views.nfl_roster, {"team_abv": "NYJ"}, name="Jets"),
+    path("patriots/", views.nfl_roster, {"team_abv": "NE"}, name="Patriots"),
+    path("bills/", views.nfl_roster, {"team_abv": "BUF"}, name="Bills"),
+    path("dolphins/", views.nfl_roster, {"team_abv": "MIA"}, name="Dolphins"),
+    path("ravens/", views.nfl_roster, {"team_abv": "BAL"}, name="Ravens"),
+    path("bengals/", views.nfl_roster, {"team_abv": "CIN"}, name="Bengals"),
+    path("browns/", views.nfl_roster, {"team_abv": "CLE"}, name="Browns"),
+    path("steelers/", views.nfl_roster, {"team_abv": "PIT"}, name="Steelers"),
+    path("texans/", views.nfl_roster, {"team_abv": "HOU"}, name="Texans"),
+    path("colts/", views.nfl_roster, {"team_abv": "IND"}, name="Colts"),
+    path("jaguars/", views.nfl_roster, {"team_abv": "JAX"}, name="Jaguars"),
+    path("titans/", views.nfl_roster, {"team_abv": "TEN"}, name="Titans"),
+    path("broncos/", views.nfl_roster, {"team_abv": "DEN"}, name="Broncos"),
+    path("chiefs/", views.nfl_roster, {"team_abv": "KC"}, name="Chiefs"),
+    path("raiders/", views.nfl_roster, {"team_abv": "LV"}, name="Raiders"),
+    path("chargers/", views.nfl_roster, {"team_abv": "LAC"}, name="Chargers"),
+    path("cowboys/", views.nfl_roster, {"team_abv": "DAL"}, name="Cowboys"),
+    path("giants/", views.nfl_roster, {"team_abv": "NYG"}, name="Giants"),
+    path("eagles/", views.nfl_roster, {"team_abv": "PHI"}, name="Eagles"),
+    path("commanders/", views.nfl_roster, {"team_abv": "WAS"}, name="Commanders"),
+    path("bears/", views.nfl_roster, {"team_abv": "CHI"}, name="Bears"),
+    path("lions/", views.nfl_roster, {"team_abv": "DET"}, name="Lions"),
+    path("packers/", views.nfl_roster, {"team_abv": "GB"}, name="Packers"),
+    path("vikings/", views.nfl_roster, {"team_abv": "MIN"}, name="Vikings"),
+    path("falcons/", views.nfl_roster, {"team_abv": "ATL"}, name="Falcons"),
+    path("panthers/", views.nfl_roster, {"team_abv": "CAR"}, name="Panthers"),
+    path("saints/", views.nfl_roster, {"team_abv": "NO"}, name="Saints"),
+    path("buccaneers/", views.nfl_roster, {"team_abv": "TB"}, name="Buccaneers"),
+    path("cardinals/", views.nfl_roster, {"team_abv": "ARI"}, name="Cardinals"),
+    path("rams/", views.nfl_roster, {"team_abv": "LA"}, name="Rams"),
+    path("49ers/", views.nfl_roster, {"team_abv": "SF"}, name="49ers"),
+    path("seahawks/", views.nfl_roster, {"team_abv": "SEA"}, name="Seahawks"),
+
     
 ]
