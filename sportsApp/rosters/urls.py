@@ -110,5 +110,42 @@ urlpatterns = [
     path("49ers/", views.nfl_roster, {"team_abv": "SF"}, name="49ers"),
     path("seahawks/", views.nfl_roster, {"team_abv": "SEA"}, name="Seahawks"),
 
+
+    #####NHL######
+    path('nhlteams/', views.nhl_teams, name='nhlteams'),
+
+    path("ducks/", views.nhl_roster, {"team_abv": "ANA"}, name="Ducks"),
+    path("coyotes/", views.nhl_roster, {"team_abv": "ARI"}, name="Coyotes"),
+    path("bruins/", views.nhl_roster, {"team_abv": "BOS"}, name="Bruins"),
+    path("sabres/", views.nhl_roster, {"team_abv": "BUF"}, name="Sabres"),
+    path("flames/", views.nhl_roster, {"team_abv": "CGY"}, name="Flames"),
+    path("hurricanes/", views.nhl_roster, {"team_abv": "CAR"}, name="Hurricanes"),
+    path("blackhawks/", views.nhl_roster, {"team_abv": "CHI"}, name="Blackhawks"),
+    path("avalanche/", views.nhl_roster, {"team_abv": "COL"}, name="Avalanche"),
+    path("bluejackets/", views.nhl_roster, {"team_abv": "CBJ"}, name="BlueJackets"),
+    path("stars/", views.nhl_roster, {"team_abv": "DAL"}, name="Stars"),
+    path("redwings/", views.nhl_roster, {"team_abv": "DET"}, name="RedWings"),
+    path("oilers/", views.nhl_roster, {"team_abv": "EDM"}, name="Oilers"),
+    path("panthers/", views.nhl_roster, {"team_abv": "FLA"}, name="Panthers"),
+    path("kings/", views.nhl_roster, {"team_abv": "LAK"}, name="Kings"),
+    path("wild/", views.nhl_roster, {"team_abv": "MIN"}, name="Wild"),
+    path("canadiens/", views.nhl_roster, {"team_abv": "MTL"}, name="Canadiens"),
+    path("predators/", views.nhl_roster, {"team_abv": "NSH"}, name="Predators"),
+    path("devils/", views.nhl_roster, {"team_abv": "NJD"}, name="Devils"),
+    path("islanders/", views.nhl_roster, {"team_abv": "NYI"}, name="Islanders"),
+    path("rangers/", views.nhl_roster, {"team_abv": "NYR"}, name="Rangers"),
+    path("senators/", views.nhl_roster, {"team_abv": "OTT"}, name="Senators"),
+    path("flyers/", views.nhl_roster, {"team_abv": "PHI"}, name="Flyers"),
+    path("penguins/", views.nhl_roster, {"team_abv": "PIT"}, name="Penguins"),
+    path("sharks/", views.nhl_roster, {"team_abv": "SJS"}, name="Sharks"),
+    path("blues/", views.nhl_roster, {"team_abv": "STL"}, name="Blues"),
+    path("lightning/", views.nhl_roster, {"team_abv": "TBL"}, name="Lightning"),
+    path("leafs/", views.nhl_roster, {"team_abv": "TOR"}, name="MapleLeafs"),
+    path("canucks/", views.nhl_roster, {"team_abv": "VAN"}, name="Canucks"),
+    path("goldenknights/", views.nhl_roster, {"team_abv": "VGK"}, name="GoldenKnights"),
+    path("capitals/", views.nhl_roster, {"team_abv": "WSH"}, name="Capitals"),
+
+
+
     
 ]

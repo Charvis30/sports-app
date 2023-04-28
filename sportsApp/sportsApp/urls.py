@@ -41,6 +41,7 @@ from rosters.views import(
     nba_teams,
     mlb_teams,
     nfl_teams,
+    nhl_teams,
 
 
     la_roster,
@@ -176,6 +177,9 @@ urlpatterns = [
     path('nflteams/', nfl_teams, name='nflteams'),
     
     path("rosters/", include("rosters.urls")),
+
+    ##NHL
+    path('nhlteams/', nhl_teams, name='nhlteams'),
 
 
     

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<title>NHL</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
+
+<div class="logo">
+    <img src="{% static 'images/nhl-logos/nhl.png' %}" class="nba-logo">
+</div>
+
+<div class="table-container">
+    <table class="teams">
+        <thead>
+            <th>Team Name</th>
+        </thead>
+        <tbody>
+            {% for team in teams.teams %}
+            <tr>
+                <td> <a href="{% url team.roster.teamName %}">{{ team.name }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
