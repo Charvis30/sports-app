@@ -47,13 +47,13 @@ def baseball_data(request):
     data = res.read()
     games_data = json.loads(data.decode("utf-8"))
 
-    # NBA odds
+    # MLB odds
     conn = http.client.HTTPSConnection("odds.p.rapidapi.com")
     headers = {
         'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
         'X-RapidAPI-Host': "odds.p.rapidapi.com"
     }
-    conn.request("GET", "/v4/sports/basketball_nba/odds?regions=us&oddsFormat=american&markets=spreads", headers=headers)
+    conn.request("GET", "/v4/sports/baseball_mlb/odds?regions=us&oddsFormat=american&markets=spreads", headers=headers)
     res = conn.getresponse()
     data = res.read()
     odds_data = json.loads(data.decode("utf-8"))
@@ -79,13 +79,13 @@ def hockey_data(request):
     data = res.read()
     games_data = json.loads(data.decode("utf-8"))
 
-    # NBA odds
+    # NHL odds
     conn = http.client.HTTPSConnection("odds.p.rapidapi.com")
     headers = {
         'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
         'X-RapidAPI-Host': "odds.p.rapidapi.com"
     }
-    conn.request("GET", "/v4/sports/basketball_nba/odds?regions=us&oddsFormat=american&markets=spreads", headers=headers)
+    conn.request("GET", "/v4/sports/icehockey_nhl/odds?regions=us&oddsFormat=american&markets=spreads", headers=headers)
     res = conn.getresponse()
     data = res.read()
     odds_data = json.loads(data.decode("utf-8"))
@@ -111,13 +111,13 @@ def soccer_data(request):
     data = res.read()
     games_data = json.loads(data.decode("utf-8"))
 
-    # NBA odds
+    # MLS odds
     conn = http.client.HTTPSConnection("odds.p.rapidapi.com")
     headers = {
         'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
         'X-RapidAPI-Host': "odds.p.rapidapi.com"
     }
-    conn.request("GET", "/v4/sports/basketball_nba/odds?regions=us&oddsFormat=american&markets=spreads", headers=headers)
+    conn.request("GET", "/v4/sports/soccer_usa_mls/odds?regions=us&oddsFormat=american&markets=spreads", headers=headers)
     res = conn.getresponse()
     data = res.read()
     odds_data = json.loads(data.decode("utf-8"))
