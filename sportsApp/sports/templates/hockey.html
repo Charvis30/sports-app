@@ -3,60 +3,74 @@
 {% block content %}
 
 {% load static %}
-<title>Hockey</title>
+
+
+<title>NHL Games</title>
 <link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
 
-  {% if user.is_authenticated %}
-    <p>Welcome, {{ user.username }}!</p>
-  {% else %}
-    <h1>Today's Games</h1>
-  {% endif %}
+<h1>Upcoming Games</h1>
+
+<div class="button">
+  <h2><a href="{% url 'nbateams' %}">NBA Teams</a></h2>
+</div>
 
 
 <div class="table-container">
   <table class="games">
     <thead>
       <tr>
-        <th>Home</th>
-        <th>Away</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      
       {% for game in games_data %}
         <tr>
-          
+          <td>{{ game.commence_time}}</td>
           {% for odds in odds_data %}
-            {% for bookmaker in odds.bookmakers %}
-              {% if bookmaker.key == "fanduel" %}
-                {% for market in bookmaker.markets %}
-                  {% if market.key == "spreads" %}
-                    {% for outcome in market.outcomes %}
-                      {% if outcome.name == game.home_team %}
-                        <td>{{ game.home_team }} {{ outcome.point }} <br> [ {{ outcome.price }} ]</td>
-                        
-                        
-                      {% elif outcome.name == game.away_team %}
-
-                        
-                        <td>{{ game.away_team }} {{ outcome.point }} <br> [ {{ outcome.price }} ]</td>
+            {% if odds.id == game.id %}
+              {% for bookmaker in odds.bookmakers %}
+                {% if bookmaker.key == "fanduel" %}
+                  {% for market in bookmaker.markets %}
+                    {% if market.key == "spreads" %}
+                      {% for outcome in market.outcomes %}
+                        {% if outcome.name == game.home_team %}
+                          {% with team=game.home_team %}
+                          <td> 
+                            <div class="team-name-home"> @ {{ team }}</div> <div class="team-odds">{{ outcome.point }} </div>
+                            <br> <br> <div class="score">{{game.scores.0.score}}</div> <div class="team-odds">[ {{ outcome.price }} ]</div>
+                          </td>
+                        {% endwith %}
                       {% endif %}
-                    {% endfor %}
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
+                      
+                      {% if outcome.name == game.away_team %}
+                        {% with team=game.away_team %}
+                        <td> 
+                          <div class="team-name-away"> {{ team }}</div> <div class="team-odds">{{ outcome.point }} </div>
+                          <br> <br> <div class="score">{{game.scores.1.score}}</div> <div class="team-odds">[ {{ outcome.price }} ]</div>
+                        </td>
+                          {% endwith %}
+                        {% endif %}
+                        
+                      {% endfor %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
           {% endfor %}
         </tr>
       {% endfor %}
-
-
-    </tbody>
-  </table>
+      </tbody>
+      
+    
+    
+    
+  </table>  
 </div>
 
 
-
-
+<h2>ALL NHL ODDS PRESENTED BY <a href="https://www.fanduel.com">FAN DUEL</a></h2>
 
 {% endblock content %}

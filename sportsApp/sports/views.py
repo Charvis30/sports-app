@@ -1,6 +1,7 @@
 import http.client
 import json
 from django.shortcuts import render
+from django.utils import timezone
 
 
 def basketball_data(request):
@@ -129,3 +130,9 @@ def soccer_data(request):
     }
     
     return render(request, 'soccer.html', context)
+
+#TIME
+def format_commence_time(commence_time):
+    dt = timezone.datetime.strptime(commence_time, '%Y-%m-%dT%H:%M:%SZ')
+    formatted_time = dt.strftime('%-m/%-d %-I:%M%p')
+    return formatted_time

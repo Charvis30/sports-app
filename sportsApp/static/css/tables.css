@@ -6,6 +6,10 @@ h1 {
     text-align: center;
     text-transform: uppercase;
 }
+h2{
+    font-family: sans-serif, Tahoma;
+    font-weight: lighter;
+}
 
 body {
     margin: 0;
@@ -151,8 +155,16 @@ a:active {
 }
 
 .score {
-    background-color: rgb(255, 91, 42);
+    float: left;
+    display: inline;
     font-weight: bolder;
+    text-align: center;
+    padding-top: 5px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(243, 243, 243);
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
@@ -325,4 +337,17 @@ footer{
 .red{
     color: red;
     display: inline;
+}
+
+.team-name-home, .team-name-away{
+    float: left;
+}
+
+.team-name-home{
+    border: 1px solid rgb(255, 91, 42);
+    padding: 5px;
+}
+
+.team-odds{
+    float: right;
 }
