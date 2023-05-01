@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<title>Washington Wizards</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
+
+<div class="logo">
+    <img src="{% static 'images/nba-logos/wizards.png' %}" class="nba-logo">
+</div>
+
+<div class="table-container">
+    <table class="players">
+        <thead>
+            <th>Player Name</th>
+            <th>Jersey Number</th>
+            <th>Position</th>
+            <th>Height</th>
+            <th>College Attended</th>
+        </thead>
+        <tbody>
+            {% for player in nba_roster.body.roster %}
+            <tr>
+                <td>{{ player.espnName }}</td>
+                <td>{{ player.jerseyNum }}</td>
+                <td> {{ player.pos }}</td>
+                <td> {{ player.height }}</td>
+                <td> {{ player.college }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<br>
+<div class="table-container">
+    <table class="games">
+      <thead>
+        <tr>
+            <th>Game</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        {% for game in nba_schedule.body.schedule %}
+        {% if game.home and nba_schedule.body.team != game.home %}
+          <td> @ {{ game.home }} </td>
+        </tr>
+        {% elif game.away and nba_schedule.body.team != game.away %}
+        <tr>
+          <td><div class="home-team">{{ game.away }}</div></td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+<br><br><br>
+
+{% endblock content %}

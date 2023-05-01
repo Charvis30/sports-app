@@ -352,9 +352,12 @@ footer{
     float: left;
 }
 
-.team-name-home{
+.team-name-home, .home-team{
     border: 1px solid rgb(255, 91, 42);
     padding: 5px;
+}
+.home-team{
+    font-weight: bolder;
 }
 
 .team-odds{
