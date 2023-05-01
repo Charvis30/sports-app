@@ -22,7 +22,7 @@
         <tbody>
             {% for team in teams.body %}
             <tr>
-                <td> <a href="{% url team.teamName %}">{{ team.teamCity }} {{ team.teamName }}</a></td>
+                <td> <a href="{% url team.teamAbv %}">{{ team.teamCity }} {{ team.teamName }}</a></td>
                 <td>{{team.conference}}</td>
                 <td>{{team.wins}} - <div class="red">{{team.loss}}</div></td>
                 <td>{{team.RS}}</td>

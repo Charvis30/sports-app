@@ -3,11 +3,11 @@
 {% block content %}
 
 {% load static %}
-<title>Houston Astros</title>
+<title>Milwaukee Brewers</title>
 <link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
 
 <div class="logo">
-    <img src="{% static 'images/mlb-logos/astros.png' %}" class="nba-logo">
+    <img src="{% static 'images/mlb-logos/brewers.png' %}" class="nba-logo">
 </div>
 
 
@@ -21,7 +21,7 @@
             <th>Hand</th>
         </thead>
         <tbody>
-            {% for player in team_roster.body.roster %}
+            {% for player in mlb_roster.body.roster %}
             <tr>
                 <td>{{ player.longName }}</td>
                 <td>{{ player.jerseyNum }}</td>
