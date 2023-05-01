@@ -6,68 +6,71 @@
 <title>MLS Games</title>
 <link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
 
+
+
+
+
+{% if games_data %}
 <h1>Upcoming Games</h1>
-
-
-
-
-<div class="table-container">
-  <table class="games">
-    <thead>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for game in games_data %}
+  <div class="table-container">
+    <table class="games">
+      <thead>
         <tr>
-          <td>{{ game.commence_time}}</td>
-          {% for odds in odds_data %}
-            {% if odds.id == game.id %}
-              {% for bookmaker in odds.bookmakers %}
-                {% if bookmaker.key == "bovada" %}
-                  {% for market in bookmaker.markets %}
-                    {% if market.key == "spreads" %}
-                      {% for outcome in market.outcomes %}
-                        {% if outcome.name == game.home_team %}
-                          {% with team=game.home_team %}
-                          <td> 
-                            <div class="team-name-home"> @ {{ team }}</div> <div class="team-odds">{{ outcome.point }} </div>
-                            <br> <br> <div class="score">{{game.scores.0.score}}</div> <div class="team-odds">[ {{ outcome.price }} ]</div>
-                          </td>
-                        {% endwith %}
-                      {% endif %}
-                      
-                      {% if outcome.name == game.away_team %}
-                        {% with team=game.away_team %}
-                        <td> 
-                          <div class="team-name-away"> {{ team }}</div> <div class="team-odds">{{ outcome.point }} </div>
-                          <br> <br> <div class="score">{{game.scores.1.score}}</div> <div class="team-odds">[ {{ outcome.price }} ]</div>
-                        </td>
+          <th></th>
+          
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for game in games_data %}
+          <tr>
+            
+            {% for odds in odds_data %}
+              {% if odds.id == game.id %}
+                {% for bookmaker in odds.bookmakers %}
+                  {% if bookmaker.key == "bovada" %}
+                    {% for market in bookmaker.markets %}
+                      {% if market.key == "spreads" %}
+                        {% for outcome in market.outcomes %}
+                          {% if outcome.name == game.home_team %}
+                            {% with team=game.home_team %}
+                            <td> 
+                              <div class="team-name-home"> @ {{ team }}</div> <div class="team-odds">{{ outcome.point }} </div>
+                              <br> <br> <div class="score">{{game.scores.0.score}}</div> <div class="team-odds">[ {{ outcome.price }} ]</div>
+                            </td>
                           {% endwith %}
                         {% endif %}
                         
-                      {% endfor %}
-                    {% endif %}
-                  {% endfor %}
-                {% endif %}
-              {% endfor %}
-            {% endif %}
-          {% endfor %}
-        </tr>
-      {% endfor %}
-      </tbody>
+                        {% if outcome.name == game.away_team %}
+                          {% with team=game.away_team %}
+                          <td> 
+                            <div class="team-name-away"> {{ team }}</div> <div class="team-odds">{{ outcome.point }} </div>
+                            <br> <br> <div class="score">{{game.scores.1.score}}</div> <div class="team-odds">[ {{ outcome.price }} ]</div>
+                          </td>
+                            {% endwith %}
+                          {% endif %}
+                          
+                        {% endfor %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </tr>
+        {% endfor %}
+        </tbody>
+        
       
-    
-    
-    
-  </table>  
-</div>
+      
+      
+    </table>  
+  </div>
+  <h2>ALL MLS ODDS PRESENTED BY <a href="https://www.bovada.com">BOVADA</a></h2>
+  <br><br><br>
+{% endif %}
 
 
-<h2>ALL MLS ODDS PRESENTED BY <a href="https://www.bovada.com">BOVADA</a></h2>
 
 
 

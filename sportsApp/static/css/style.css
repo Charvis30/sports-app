@@ -48,6 +48,9 @@ a{
 /* NAV BAR  */
 footer{
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .topnav a:hover, footer{

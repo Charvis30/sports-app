@@ -31,8 +31,10 @@ a {
 /* NAV BAR  */
 footer{
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
-
 .topnav a:hover, footer{
     color: navy;
 }
@@ -168,6 +170,11 @@ a:active {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 

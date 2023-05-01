@@ -5,14 +5,17 @@
 {% load static %}
 
 
-<title>NHL Games</title>
+<title>NFL Games</title>
 <link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
+
+
+
 
 {% if games_data %}
 <h1>Upcoming Games</h1>
 
 <div class="button">
-  <h2><a href="{% url 'nhlteams' %}">Teams</a></h2>
+  <h2><a href="{% url 'nflteams' %}">Teams</a></h2>
 </div>
 
   <div class="table-container">
@@ -65,13 +68,16 @@
         </tbody>
     </table>  
 </div>
-<h2>ALL NHL ODDS PRESENTED BY <a href="https://www.fanduel.com">FAN DUEL</a></h2>
-<br><br><br>
+<h2>ALL NFL ODDS PRESENTED BY <a href="https://www.fanduel.com">FAN DUEL</a></h2>
 {% else %}
     <div class="button">
-        <h2><a href="{% url 'nhlteams' %}">Teams</a></h2>
+        <h2><a href="{% url 'nflteams' %}">Teams</a></h2>
     </div>
     <h1>The season has not begun yet stay tuned for upcoming games</h1>
 {% endif %}
+
+
+
+
 
 {% endblock content %}

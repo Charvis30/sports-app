@@ -8,69 +8,70 @@
 <title>MLB Games</title>
 <link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
 
+{% if games_data %}
 <h1>Upcoming Games</h1>
 
 <div class="button">
   <h2><a href="{% url 'mlbteams' %}">Teams</a></h2>
 </div>
 
-
-<div class="table-container">
-  <table class="games">
-    <thead>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for game in games_data %}
+  <div class="table-container">
+    <table class="games">
+      <thead>
         <tr>
-          <td>{{ game.commence_time}}</td>
-          {% for odds in odds_data %}
-            {% if odds.id == game.id %}
-              {% for bookmaker in odds.bookmakers %}
-                {% if bookmaker.key == "fanduel" %}
-                  {% for market in bookmaker.markets %}
-                    {% if market.key == "spreads" %}
-                      {% for outcome in market.outcomes %}
-                        {% if outcome.name == game.home_team %}
-                          {% with team=game.home_team %}
-                            <td> 
-                              <div class="team-name-home"> @ {{ team }}</div> <div class="team-odds">{{ outcome.point }} </div>
-                              <br> <br> <div class="score">{{game.scores.0.score}}</div> <div class="team-odds">[ {{ outcome.price }} ]</div>
-                            </td>
-                          {% endwith %}
-                        {% endif %}
-                        
-                        {% if outcome.name == game.away_team %}
-                          {% with team=game.away_team %}
-                          <td> 
-                            <div class="team-name-away"> {{ team }}</div> <div class="team-odds">{{ outcome.point }} </div>
-                            <br> <br> <div class="score">{{game.scores.1.score}}</div> <div class="team-odds">[ {{ outcome.price }} ]</div>
-                          </td>
-                          {% endwith %}
-                        {% endif %}
-                        
-                      {% endfor %}
-                    {% endif %}
-                  {% endfor %}
-                {% endif %}
-              {% endfor %}
-            {% endif %}
-          {% endfor %}
+          <th></th>
+          
+          <th></th>
         </tr>
-      {% endfor %}
-      </tbody>
-      
-    
-    
-    
-  </table>  
+      </thead>
+      <tbody>
+        {% for game in games_data %}
+          <tr>
+          
+            {% for odds in odds_data %}
+              {% if odds.id == game.id %}
+                {% for bookmaker in odds.bookmakers %}
+                  {% if bookmaker.key == "fanduel" %}
+                    {% for market in bookmaker.markets %}
+                      {% if market.key == "spreads" %}
+                        {% for outcome in market.outcomes %}
+                          {% if outcome.name == game.home_team %}
+                            {% with team=game.home_team %}
+                              <td> 
+                                <div class="team-name-home"> @ {{ team }}</div> <div class="team-odds">{{ outcome.point }} </div>
+                                <br> <br> <div class="score">{{game.scores.0.score}}</div> <div class="team-odds">[ {{ outcome.price }} ]</div>
+                              </td>
+                            {% endwith %}
+                          {% endif %}
+                          
+                          {% if outcome.name == game.away_team %}
+                            {% with team=game.away_team %}
+                            <td> 
+                              <div class="team-name-away"> {{ team }}</div> <div class="team-odds">{{ outcome.point }} </div>
+                              <br> <br> <div class="score">{{game.scores.1.score}}</div> <div class="team-odds">[ {{ outcome.price }} ]</div>
+                            </td>
+                            {% endwith %}
+                          {% endif %}
+                          
+                        {% endfor %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>  
 </div>
-
 <h2>ALL MLB ODDS PRESENTED BY <a href="https://www.fanduel.com">FAN DUEL</a></h2>
-
+<br><br><br>
+{% else %}
+    <div class="button">
+        <h2><a href="{% url 'mlbteams' %}">Teams</a></h2>
+    </div>
+    <h1>The season has not begun yet stay tuned for upcoming games</h1>
+{% endif %}
 
 {% endblock content %}

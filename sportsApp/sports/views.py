@@ -131,8 +131,34 @@ def soccer_data(request):
     
     return render(request, 'soccer.html', context)
 
-#TIME
-def format_commence_time(commence_time):
-    dt = timezone.datetime.strptime(commence_time, '%Y-%m-%dT%H:%M:%SZ')
-    formatted_time = dt.strftime('%-m/%-d %-I:%M%p')
-    return formatted_time
+##FOOTBALL
+def football_data(request):
+    # soccer games
+    conn = http.client.HTTPSConnection("odds.p.rapidapi.com")
+    headers = {
+        'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
+        'X-RapidAPI-Host': "odds.p.rapidapi.com"
+    }
+    conn.request("GET", "/v4/sports/americanfootball_nfl/scores", headers=headers)
+    res = conn.getresponse()
+    data = res.read()
+    games_data = json.loads(data.decode("utf-8"))
+
+    # MLS odds
+    conn = http.client.HTTPSConnection("odds.p.rapidapi.com")
+    headers = {
+        'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
+        'X-RapidAPI-Host': "odds.p.rapidapi.com"
+    }
+    conn.request("GET", "/v4/sports/americanfootball_nfl/odds?regions=us&oddsFormat=american&markets=spreads", headers=headers)
+    res = conn.getresponse()
+    data = res.read()
+    odds_data = json.loads(data.decode("utf-8"))
+
+    # Combine both contexts into one
+    context = {
+        'games_data': games_data,
+        'odds_data': odds_data
+    }
+    
+    return render(request, 'football.html', context)
