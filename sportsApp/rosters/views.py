@@ -87,10 +87,10 @@ def get_mlb_roster(team_abv):
     return json.loads(data.decode("utf-8"))
 
 def get_mlb_schedule(team_abv):
-    conn = http.client.HTTPSConnection("tank01-fantasy-stats.p.rapidapi.com")
+    conn = http.client.HTTPSConnection("tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com")
     headers = {
         'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
-        'X-RapidAPI-Host': "tank01-fantasy-stats.p.rapidapi.com"
+        'X-RapidAPI-Host': "tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com"
     }
     conn.request("GET", f"/getMLBTeamSchedule?teamAbv={team_abv}", headers=headers)
     res = conn.getresponse()
@@ -101,7 +101,7 @@ def mlb_roster(request, team_abv):
     mlb_roster = get_mlb_roster(team_abv)
     mlb_schedule = get_mlb_schedule(team_abv)
     context = {"mlb_roster": mlb_roster,
-               "nfl_schedule": mlb_schedule}
+               "mlb_schedule": mlb_schedule}
     
     return render(request, f"mlb-teams/{team_abv.lower()}MLB.html", context)
 

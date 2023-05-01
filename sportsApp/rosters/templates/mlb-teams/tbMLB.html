@@ -33,5 +33,28 @@
         </tbody>
     </table>
 </div>
-
+<br>
+<div class="table-container">
+    <table class="games">
+      <thead>
+        <tr>
+            <th>Game</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        {% for game in mlb_schedule.body.schedule %}
+        {% if game.home and mlb_schedule.body.team != game.home %}
+          <td> @ {{ game.home }} </td>
+        </tr>
+        {% elif game.away and mlb_schedule.body.team != game.away %}
+        <tr>
+          <td><div class="home-team">{{ game.away }}</div></td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+<br><br><br>
 {% endblock content %}
