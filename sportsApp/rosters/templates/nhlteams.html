@@ -18,7 +18,7 @@
         <tbody>
             {% for team in teams.teams %}
             <tr>
-                <td> <a href="{% url team.roster.teamName %}">{{ team.name }}</a></td>
+                <td> <a href="{% url team.teamName %}">{{ team.name }}</a></td>
             </tr>
             {% endfor %}
         </tbody>

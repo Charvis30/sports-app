@@ -706,19 +706,19 @@ def nhl_teams(request):
     context = {'teams': data}
     return render(request, 'nhlteams.html', context)
 
-def get_nhl_roster(team_abv):
-    conn = http.client.HTTPSConnection("tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com")
+def get_nhl_roster(id):
+    conn = http.client.HTTPSConnection("nhl-stats-and-live-data.p.rapidapi.com")
     headers = {
         'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
-        'X-RapidAPI-Host': "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
+        'X-RapidAPI-Host': "nhl-stats-and-live-data.p.rapidapi.com"
     }
-    conn.request("GET", f"/getNFLTeamRoster?teamAbv={team_abv}", headers=headers)
+    conn.request("GET", f"/teams/{id}/roster", headers=headers)
     res = conn.getresponse()
     data = res.read()
     return json.loads(data.decode("utf-8"))
 
+def nhl_roster(request, id):
+    nhl_roster = get_nhl_roster(id)
+    context = {"nhl_roster": nhl_roster}
+    return render(request, f"nhl-teams/{id}.html", context)
 
-def nhl_roster(request, team_abv):
-    nfl_roster = get_nfl_roster(team_abv)
-    context = {"nfl_roster": nfl_roster}
-    return render(request, f"nfl-teams/{team_abv.lower()}.html", context)

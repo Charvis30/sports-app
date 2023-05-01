@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<title>Vancouver Canucks</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}"/>
+
+<div class="logo">
+    <img src="{% static 'images/nhl-logos/canucks.png' %}" class="nba-logo">
+</div>
+
+
+<div class="table-container">
+    <table class="players">
+        <thead>
+            <th>Player Name</th>
+            <th>Jersey Number</th>
+            <th>Position</th>
+        </thead>
+        <tbody>
+            {% for player in nhl_roster.roster %}
+        <tr>
+            <td>{{ player.person.fullName }}</td>
+            <td>{{ player.jerseyNumber }}</td>
+            <td>{{ player.position.name }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
