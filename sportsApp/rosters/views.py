@@ -148,12 +148,23 @@ def get_nfl_schedule(team_abv):
 
 
 def nfl_roster(request, team_abv):
+
+    weeks = []
+    for i in range(1, 17):
+        week_num = str(i)
+        week_name = "Week " + week_num
+        week_dict = {"Week": week_name, "Week Number": week_num}
+        weeks.append(week_dict)
+        weeks = sorted(weeks, key=lambda x: int(x['Week Number']))
+
     nfl_roster = get_nfl_roster(team_abv)
     nfl_schedule = get_nfl_schedule(team_abv)
     context = {"nfl_roster": nfl_roster,
-               "nfl_schedule": nfl_schedule}
+               "nfl_schedule": nfl_schedule,
+               "weeks": weeks}
     
     return render(request, f"nfl-teams/{team_abv.lower()}.html", context)
+
 
 
 

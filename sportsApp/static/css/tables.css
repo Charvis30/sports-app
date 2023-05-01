@@ -358,6 +358,8 @@ footer{
 }
 .home-team{
     font-weight: bolder;
+    border: 1px solid rgb(255, 91, 42);
+    display: inline;
 }
 
 .team-odds{
