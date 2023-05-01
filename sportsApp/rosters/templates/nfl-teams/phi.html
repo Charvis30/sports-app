@@ -37,5 +37,31 @@
         </tbody>
     </table>
 </div>
+<br>
+<div class="table-container">
+  <table class="games">
+      <thead>
+          <tr>
+              <th>Week</th>
+              <th>Game</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for week in weeks %}
+              <tr>
+                  <td>{{ week.Week }}</td>
+                  <td>
+                      {% for game in nfl_schedule.body.schedule %}
+                          {% if week.Week == game.gameWeek %}
+                            {{ game.away }} @ <div class="home-team">{{ game.home }}</div><br>
+                          {% endif %}
+                      {% endfor %}
+                  </td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+</div>
 
+<br><br><br>
 {% endblock content %}

@@ -70,10 +70,22 @@
 </div>
 <h2>ALL NFL ODDS PRESENTED BY <a href="https://www.fanduel.com">FAN DUEL</a></h2>
 {% else %}
-    <div class="button">
-        <h2><a href="{% url 'nflteams' %}">Teams</a></h2>
+    <div style="text-align: center;">
+  <div style="position: relative;">
+    <img src="https://static01.nyt.com/images/2023/04/27/multimedia/27nfl-draft-tracker-zpcq/27nfl-draft-tracker-zpcq-videoSixteenByNine3000.jpg" alt="NFL Image" style="width:100%; max-height: 600px;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+      <h1 style="font-size: 56px; color: #FFFFFF; margin-top: 0;">Get Ready for the New NFL Season</h1>
+      <p style="font-size: 24px; color: #FFFFFF;">Stay tuned for upcoming games and exciting news.</p>
+      <div style="margin-top: 30px;">
+        <a href="{% url 'nflteams' %}" style="text-decoration: none; background-color: #FFFFFF; color: #1C1C1C; padding: 12px 24px; border-radius: 50px; font-size: 18px;">Discover Teams</a>
+      </div>
     </div>
-    <h1>The season has not begun yet stay tuned for upcoming games</h1>
+  </div>
+    </div>
+</div>
+
+
+
 {% endif %}
 
 

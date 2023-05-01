@@ -23,8 +23,11 @@ def news(request):
     nfl_conn.request("GET", "/news", headers=nfl_headers)
     nfl_res = nfl_conn.getresponse()
     nfl_data = nfl_res.read()
-    nfl_news_data = json.loads(nfl_data.decode("utf-8"))
-
+    try:
+        nfl_news_data = json.loads(nfl_data.decode("utf-8"))
+    except json.JSONDecodeError as e:
+        print("Error decoding NFL data:", e)
+        nfl_news_data = []
     # soccer API
     soccer_conn = http.client.HTTPSConnection("transfermarket.p.rapidapi.com")
     soccer_headers = {

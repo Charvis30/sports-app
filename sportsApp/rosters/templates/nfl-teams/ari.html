@@ -39,26 +39,29 @@
 </div>
 <br>
 <div class="table-container">
-    <table class="games">
+  <table class="games">
       <thead>
-        <tr>
-            <th>Game</th>
-        </tr>
+          <tr>
+              <th>Week</th>
+              <th>Game</th>
+          </tr>
       </thead>
       <tbody>
-        <tr>
-        {% for game in nba_schedule.body.schedule %}
-        {% if game.home and nba_schedule.body.team != game.home %}
-          <td> @ {{ game.home }} </td>
-        </tr>
-        {% elif game.away and nba_schedule.body.team != game.away %}
-        <tr>
-          <td><div class="home-team">{{ game.away }}</div></td>
-        </tr>
-        {% endif %}
-        {% endfor %}
+          {% for week in weeks %}
+              <tr>
+                  <td>{{ week.Week }}</td>
+                  <td>
+                      {% for game in nfl_schedule.body.schedule %}
+                          {% if week.Week == game.gameWeek %}
+                            {{ game.away }} @ <div class="home-team">{{ game.home }}</div><br>
+                          {% endif %}
+                      {% endfor %}
+                  </td>
+              </tr>
+          {% endfor %}
       </tbody>
-    </table>
-  </div>
+  </table>
+</div>
+
 <br><br><br>
 {% endblock content %}
