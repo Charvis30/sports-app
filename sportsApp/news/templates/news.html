@@ -3,15 +3,15 @@
 {% block content %}
 
 {% load static %}
+
 <title>News</title>
 <link rel="stylesheet" type="text/css" href="{% static 'css/tables.css' %}" />
-
 {% if user.is_authenticated %}
+
 <p>Welcome, {{ user.username }}!</p>
 {% else %}
 <h1>news</h1>
 {% endif %}
-
 <!-- NBA News -->
 <div class="news-container">
   <table class="news">
@@ -19,28 +19,17 @@
     <thead>
       <tr>
         <th>Headline</th>
-        <th>Source</th>
-        <th>URL</th>
       </tr>
     </thead>
     <tbody>
       {% for article in nba_news_data %}
       <tr>
-        <td>{{ article.title }}</td>
-        <td>{{ article.source }}</td>
-        <td><a href="{{ article.url }}">Link</a></td>
+        <td><a href="{{ article.url }}">{{ article.title }}</a></td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
 </div>
-
-
-
-
-
-
-
 <br>
 <br>
 <br>
@@ -48,9 +37,4 @@
 <br>
 <br>
 <br>
-
-
-
-
-
 {% endblock content %}
