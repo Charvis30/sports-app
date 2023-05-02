@@ -35,51 +35,7 @@
   </table>
 </div>
 
-<!-- NFL News -->
-<div class="news-container">
-  <table class="news">
-    <caption>American Football News</caption>
-    <thead>
-      <tr>
-        <th>Headline</th>
-        <th>Source</th>
-        <th>URL</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for article in nfl_news_data %}
-      <tr>
-        <td>{{ article.title }}</td>
-        <td>{{ article.source }}</td>
-        <td><a href="{{ article.url }}">Link</a></td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
 
-<!-- soccer News -->
-<div class="news-container">
-  <table class="news">
-    <caption>Soccer News</caption>
-    <thead>
-      <tr>
-        <th>Headline</th>
-        <th>Source</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      {% for article in soccer_news_data %}
-      <tr>
-        <td>{{ article.news }}</td>
-        <td>{{ article.source }}</td>
-
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
 
 
 

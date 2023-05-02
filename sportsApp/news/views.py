@@ -14,33 +14,12 @@ def news(request):
     nba_data = nba_res.read()
     nba_news_data = json.loads(nba_data.decode("utf-8"))
 
-    # NFL API
-    nfl_conn = http.client.HTTPSConnection("football-news-live1.p.rapidapi.com")
-    nfl_headers = {
-        'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
-        'X-RapidAPI-Host': "football-news-live1.p.rapidapi.com"
-    }
-    nfl_conn.request("GET", "/news", headers=nfl_headers)
-    nfl_res = nfl_conn.getresponse()
-    nfl_data = nfl_res.read()
-    nfl_news_data = json.loads(nfl_data.decode("utf-8"))
-
-    # soccer API
-    soccer_conn = http.client.HTTPSConnection("transfermarket.p.rapidapi.com")
-    soccer_headers = {
-        'X-RapidAPI-Key': "62179425a4mshc82870dfbd61b7cp115211jsne5fa10ef3b21",
-        'X-RapidAPI-Host': "transfermarket.p.rapidapi.com"
-    }
-    soccer_conn.request("GET", "/news/list-latest?domain=de", headers=soccer_headers)
-    soccer_res = soccer_conn.getresponse()
-    soccer_data = soccer_res.read()
-    soccer_news_data = json.loads(soccer_data.decode("utf-8"))
+    
 
     # Combine the data from all APIs into a single dictionary
     context = {
         'nba_news_data': nba_news_data,
-        'nfl_news_data': nfl_news_data,
-        'soccer_news_data': soccer_news_data,
+        
 
     }
 
