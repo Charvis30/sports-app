@@ -6,11 +6,14 @@
 <title>Home Page</title>
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
 
-  {% if user.is_authenticated %}
-    <p>Welcome, {{ user.username }}!</p>
-  {% else %}
-    <h1>Welcome</h1>
-  {% endif %}
+<h1>WELCOME</h1>
+<div class="logos">
+  <a href="{% url 'hockey' %}"><img src="{% static 'images/nhl-logos/nhl.png' %}" class="nba-logo"></a>
+  <a href="{% url 'basketball' %}"><img src="{% static 'images/nba-logos/nba.png' %}" class="nba-logo"></a>
+  <a href="{% url 'football' %}"><img src="{% static 'images/nfl-logos/nfl.png' %}" class="nba-logo"></a>
+  <a href="{% url 'baseball' %}"><img src="{% static 'images/mlb-logos/mlb.png' %}" class="nba-logo"></a>
+  <a href="{% url 'soccer' %}"><img src="{% static 'images/mls-logos/mls.png' %}" class="nba-logo"></a>
+</div>
 
   <div class="slideshow">
 		<img src="{% static 'images/curry.jpg' %}">
@@ -41,6 +44,17 @@
 
 <br>
 <br>
+
+<div class="about-container">
+  <p>Welcome to our sports app! We're thrilled to offer you a comprehensive solution for all your sports news and information needs. 
+    Our app is designed to provide you with real-time scores and updates for a wide range of professional sports leagues and events.
+    Additionally, we've integrated up-to-date betting odds so that you can make informed decisions on your wagers.
+    We understand the importance of staying up to date with the latest news and analysis, which is why our app pulls in content from top sports publications. 
+    You can customize your experience by filtering by sports and even check in on your favorite teams, 
+    ensuring that you only see the news and information that's most relevant to you. Our goal is to offer a one-stop-shop for all things sports, 
+    and we're excited to have you join us on this journey!
+  </p>
+</div>
 <br>
 <br>
 <br>
